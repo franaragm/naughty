@@ -6,32 +6,35 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Code Sample for material.AppBar.actions',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyStatelessWidget(),
+      title: 'Naughty',
+      color: Color.fromRGBO(81, 66, 154, 1),
+      home: MyHomePage(),
     );
   }
 }
 
-class MyStatelessWidget extends StatelessWidget {
-  MyStatelessWidget({Key key}) : super(key: key);
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Hello World'),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.shopping_cart),
-            tooltip: 'Open shopping cart',
-            onPressed: () {
-              // ...
-            },
+        title: Text('Share'),
+        backgroundColor: Color.fromRGBO(81, 66, 154, 1),
+        leading: Icon(Icons.arrow_back),
+      ),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/Naughty.png'), fit: BoxFit.cover)
+        ),
+        child: Center(
+          child: Container(
+            height: 60.0,
+            color: Colors.black12,
+            child: Center(
+              child: Text('Naughty', style: TextStyle(color: Colors.white, fontSize: 28))
+            ),
           ),
-        ],
+        ),
       ),
     );
   }
